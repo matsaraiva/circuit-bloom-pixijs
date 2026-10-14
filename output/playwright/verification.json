@@ -1,5 +1,7 @@
 {
   "testedOn": "2026-10-14",
+  "url": "https://matsaraiva.github.io/circuit-bloom-pixijs/",
+  "alsoTestedLocally": "http://127.0.0.1:4173/circuit-bloom-pixijs/",
   "browserVersion": "155.0.8059.40",
   "visibilityHandler": {"controlledEvents":true,"frozenPixelsPreserved":true,"animationResumed":true,"realTabVisibility":"Not verified: the automation browser reports background/minimized tabs as visible."},
   "capture": {"path":"output/playwright/gameplay.webm","durationSeconds":20.8,"width":1280,"height":800,"codec":"VP8","decodedFinalFrameInspected":true},

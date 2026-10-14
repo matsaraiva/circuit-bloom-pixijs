@@ -8,7 +8,9 @@ Built for Matheus's game development portfolio with **TypeScript, Vite and PixiJ
 
 [Watch the gameplay capture](output/playwright/gameplay.webm) · [Mobile screenshot](output/playwright/mobile.png) · [Completed garden](output/playwright/completion.png)
 
-**Publication status:** the owner approved MIT licensing, source publication and GitHub Pages deployment on October 14, 2026. The public [GitHub repository](https://github.com/matsaraiva/circuit-bloom-pixijs) has been created; publication and demo verification are in progress.
+**[Play Circuit Bloom](https://matsaraiva.github.io/circuit-bloom-pixijs/)** · **[Source](https://github.com/matsaraiva/circuit-bloom-pixijs)**
+
+Published under MIT with the owner's explicit approval on October 14, 2026. The public demo was verified through the same desktop and emulated-touch playthrough used locally.
 
 ## Play locally
 
@@ -67,7 +69,7 @@ The gardens are constructed by toggling an all-lit board with `[5,10]`, `[0,6,15
 
 Verified on **October 14, 2026**, using automated Chromium on Windows and a 360×800 touch context. `npm ci`, all 11 unit tests, TypeScript checking and the production build passed. Browser checks played all three gardens with mouse and touch, solved with keyboard, exercised reset/replay, resizing and reduced motion, and confirmed 20 rapid taps returned to identical canvas pixels. Ten resets retained one canvas and one state update per input. No page errors, console warnings or failed requests were recorded in the final browser run.
 
-Screenshots above are from the production build served at the GitHub Pages subpath. Details and repeatable browser commands are in [QA.md](QA.md); raw results are in [verification.json](output/playwright/verification.json).
+Screenshots above are from the published production build at the GitHub Pages subpath. The gameplay capture was recorded from the identical local production build. Details and repeatable browser commands are in [QA.md](QA.md); raw results are in [verification.json](output/playwright/verification.json).
 
 ## Static hosting
 

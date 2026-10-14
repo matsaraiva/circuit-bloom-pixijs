@@ -1,7 +1,9 @@
 // The pinned Playwright CLI runs this function after video-start.
 async (page) => {
+  const gameUrl = page.url();
+  if (new URL(gameUrl).pathname !== '/circuit-bloom-pixijs/') throw new Error('Open the local or published game URL first');
   await page.setViewportSize({ width: 1440, height: 900 });
-  await page.goto('http://127.0.0.1:4173/circuit-bloom-pixijs/');
+  await page.goto(gameUrl);
   await page.locator('#board-frame[data-status="playing"]').waitFor();
   await page.evaluate(() => document.fonts.ready);
   await page.waitForTimeout(1000);

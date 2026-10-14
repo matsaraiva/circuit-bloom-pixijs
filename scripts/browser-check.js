@@ -2,6 +2,9 @@
 async (page) => {
   const report = { checks: [], errors: [], warnings: [], failedRequests: [], environments: [] };
   const assert = (condition, message) => { if (!condition) throw new Error(message); };
+  const gameUrl = page.url();
+  assert(new URL(gameUrl).pathname === '/circuit-bloom-pixijs/', 'Open the local or published game URL before running these checks');
+  report.url = gameUrl;
   const check = (message) => report.checks.push(message);
   const watch = (target) => {
     const onError = (error) => report.errors.push(error.message);
@@ -47,7 +50,7 @@ async (page) => {
   const solutions = [[5, 10], [0, 6, 15], [1, 7, 8, 14]];
   const release = watch(page);
   await page.setViewportSize({ width: 1440, height: 900 });
-  await page.goto('http://127.0.0.1:4173/circuit-bloom-pixijs/');
+  await page.goto(gameUrl);
   await page.locator('#board-frame[data-status="playing"]').waitFor();
   await page.evaluate(() => document.fonts.ready);
   report.environments.push({ type: 'desktop', viewport: '1440×900', userAgent: await page.evaluate(() => navigator.userAgent) });
@@ -133,7 +136,7 @@ async (page) => {
   const context = await page.context().browser().newContext({ viewport: { width: 360, height: 800 }, isMobile: true, hasTouch: true, deviceScaleFactor: 2 });
   const mobile = await context.newPage();
   const releaseMobile = watch(mobile);
-  await mobile.goto('http://127.0.0.1:4173/circuit-bloom-pixijs/');
+  await mobile.goto(gameUrl);
   await mobile.locator('#board-frame[data-status="playing"]').waitFor();
   await mobile.evaluate(() => document.fonts.ready);
   report.environments.push({ type: 'emulated touch', viewport: '360×800', deviceScaleFactor: 2, userAgent: await mobile.evaluate(() => navigator.userAgent) });

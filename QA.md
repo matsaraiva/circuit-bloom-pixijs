@@ -1,6 +1,6 @@
 # Verification record
 
-Date: October 14, 2026. Platform: Windows. Tested production URL: `http://127.0.0.1:4173/circuit-bloom-pixijs/`.
+Date: October 14, 2026. Platform: Windows. Tested production URLs: `http://127.0.0.1:4173/circuit-bloom-pixijs/` and [the public GitHub Pages demo](https://matsaraiva.github.io/circuit-bloom-pixijs/).
 
 ## Results
 
@@ -9,7 +9,8 @@ Date: October 14, 2026. Platform: Windows. Tested production URL: `http://127.0.
 | Clean lockfile installation | `npm ci` passed; npm reported no vulnerabilities |
 | Rule/state modules | 11 Vitest tests passed |
 | TypeScript | `npm run typecheck` passed |
-| Production build | `npm run build` passed with the Pages subpath |
+| Production build | `npm run build` passed with the Pages subpath; GitHub Actions also passed all 11 tests and build on Linux |
+| Public deployment | Pages workflow completed successfully; full browser checks passed again against the public URL |
 | Mouse | Corners, edges, center and row boundaries map to the correct cross |
 | All gardens | Known solutions win with 2, 3 and 4 moves; input locks; next is deliberate |
 | Keyboard | Arrows, boundaries, Enter, Space and Tab exit passed |
@@ -43,7 +44,7 @@ npx --yes --package @playwright/cli@0.1.22 playwright-cli -s=circuit-bloom snaps
 npx --yes --package @playwright/cli@0.1.22 playwright-cli -s=circuit-bloom run-code --filename=scripts/browser-check.js --raw
 ```
 
-`browser-check.js` operates through mouse/keyboard/touch and DOM controls, never directly changes the game state, captures screenshots, and returns the diagnostic report. The extra touch context closes after testing. If no compatible browser is installed, use the CLI's documented `install-browser` command.
+`browser-check.js` operates through mouse/keyboard/touch and DOM controls, never directly changes the game state, captures screenshots, and returns the diagnostic report. It uses the currently opened game URL, so open the published demo instead of localhost to repeat the live check. The extra touch context closes after testing. If no compatible browser is installed, use the CLI's documented `install-browser` command.
 
 ## Gameplay capture
 
@@ -63,4 +64,4 @@ Wait for the capture command to finish before stopping the recording. It solves 
 - Reduced mobile heading space, restored whitespace in condensed text, and brought controls/result/footer into the 360×800 layout.
 - Matched keyboard focus state before comparing reversible canvas pixels; focus outlines are intentionally different from an unfocused board.
 
-No known blocking gameplay defect remains in the tested environment. The owner explicitly approved MIT licensing, commit/push and GitHub Pages deployment on October 14, 2026; public verification is in progress.
+No known blocking gameplay defect remains in the tested environment. The owner explicitly approved MIT licensing, commit/push and GitHub Pages deployment on October 14, 2026. The source and demo are published, and the live browser verification passed. Initial workflow annotations about Node 20 and a moving Ubuntu label prompted a switch to verified Node 24 action releases and Ubuntu 24.04. No frame-rate or physical-device claims are added.
