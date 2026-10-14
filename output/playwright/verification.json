@@ -1,0 +1,33 @@
+{
+  "testedOn": "2026-10-14",
+  "browserVersion": "155.0.8059.40",
+  "visibilityHandler": {"controlledEvents":true,"frozenPixelsPreserved":true,"animationResumed":true,"realTabVisibility":"Not verified: the automation browser reports background/minimized tabs as visible."},
+  "capture": {"path":"output/playwright/gameplay.webm","durationSeconds":20.8,"width":1280,"height":800,"codec":"VP8","decodedFinalFrameInspected":true},
+  "checks": [
+    "Corner, edge, center and row-boundary pointer interactions match the cross rule.",
+    "20 rapid taps preserve move count and converge to the identical canvas image.",
+    "10 resets keep one canvas and one state update per tap.",
+    "Arrow navigation, Enter, Space, boundary clamping, victory lock and Tab exit work.",
+    "All three desktop gardens solve through the UI; next is deliberate, final completion and replay work.",
+    "Hit mapping and layout stay aligned at 360×800, 1024×768 and 1440×900.",
+    "Reduced-motion preference changes during play retain correct state.",
+    "Emulated 360×800 touch plays all three gardens, reset and replay; all controls fit.",
+    "Production subpath loads without page errors, console warnings or failed requests."
+  ],
+  "errors": [],
+  "warnings": [],
+  "failedRequests": [],
+  "environments": [
+    {
+      "type": "desktop",
+      "viewport": "1440×900",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+    },
+    {
+      "type": "emulated touch",
+      "viewport": "360×800",
+      "deviceScaleFactor": 2,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+    }
+  ]
+}

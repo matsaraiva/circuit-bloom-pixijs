@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.playwright-cli/
+*.local
+IMPLEMENTATION_BRIEF.md
+PROGRESS.md
+output/playwright/*
+!output/playwright/desktop.png
+!output/playwright/mobile.png
+!output/playwright/completion.png
+!output/playwright/gameplay.webm
+!output/playwright/verification.json
